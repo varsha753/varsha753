@@ -8,9 +8,9 @@ let poseLabel='';
 let target;
 let poseCounter;
 let target2;
-let t=['B','A','C','E','F','G'];
-let posesArray = ['Prayer Pose', 'Lotus Pose', 'Cow-Face Pose','Warrior I', 'Warrior II', 'Tree Pose'];
-let posesHindi = ['(Pranamasan)', '(Padmasana)', '(Gomukhasan)','(Ustrasan)', '', '', ''];
+let t=['B','A','C','E','G'];
+let posesArray = ['Prayer Pose', 'Lotus Pose', 'Cow-Face Pose','Warrior I', 'Tree Pose'];
+
 
 let counter;
 
@@ -264,7 +264,7 @@ function modelLoaded() {
 }
 
 function gotPoses(poses) {
-  console.log("getting poses");
+  //console.log("getting poses");
   if (poses.length > 0) {
     pose = poses[0].pose;
     skeleton = poses[0].skeleton;
