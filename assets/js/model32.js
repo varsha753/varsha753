@@ -198,10 +198,10 @@ function gotResult(error, results) {
 document.getElementById("welldone").textContent = "";
 
   poseLabel='Hold pose for '+targetLabel;
-  console.log('iteration begin');
+  //console.log('iteration begin');
   console.log('Hold pose for '+targetLabel);
   if (results[0].label.toUpperCase()==target) {
-    if (counter==60){
+    if (counter==30){
       console.log('next pose');
       poseLabel='Well done !! Next Pose';
       counter=0;
