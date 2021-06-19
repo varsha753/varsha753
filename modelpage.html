@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <script src="ml5.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Try YogSkills </title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/lg5.png" rel="icon">
+    <link href="assets/img/lg5.png" rel="apple-touch-icon" height="70px">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <link href="assets/css/videopage.css" rel="stylesheet">
+
+    <link href="assets/css/counteranimate.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Arsha - v2.3.1
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+<!-- ANIMATION FOR THE BACKGROUND -->
+    <ul class="circles">
+        <li></li>
+        <li></li>
+
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 col-xs-8">
+                <a href="Learn.html" style="margin-top: 5px;"><span class="material-icons" style="border: cornsilk 0.2rem solid; border-radius: 50px; color: cornsilk; font-size: 24dp;">
+                    arrow_back
+                    </span></a>
+
+                <div class="context">
+                    <video id="video" autoplay></video>
+
+                </div>
+            </div>
+            <h1 id="welldone" style="font-size:30px; top:550px; left:30px; position:absolute; color: 	#8B0000;">Well Done..You have completed all the poses!!! </h1>
+            <div class="col-lg-6 col-sm-12 col-xs-12">
+                <div class="imgyogname">
+                    <h1 class="yoganame" id="yogan"  ></h1>
+                    <!-- HIDDEN ONLY ON EXTRA SMALL DEVICES -->
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12">
+                            <ul class="flip minutePlay">
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <ul class="flip secondPlay">
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">2</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">2</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">3</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">3</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">4</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">4</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">5</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">5</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">6</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">6</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">7</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">7</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">8</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">8</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">9</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">9</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <img class="yogimage" src="assets/img/yog1.png" height="250px"
+                            width="250px">
+                        </div>
+                        <!-- <div class="col-lg-6 col-sm-6 col-xs-6">
+
+
+                        </div> -->
+
+                    </div>
+                    <!-- VISIBLE ONLY ON EXTRA SMALL DEVICES -->
+                    <!-- <div class="row d-block d-sm-none">
+                        <div class="col-lg-12 col-sm-12">
+                            <ul class="flip minutePlay">
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <ul class="flip secondPlay">
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">0</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">1</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">2</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">2</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">3</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">3</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">4</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">4</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">5</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">5</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">6</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">6</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">7</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">7</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">8</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">8</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="up">
+                                            <div class="shadow"></div>
+                                            <div class="inn">9</div>
+                                        </div>
+                                        <div class="down">
+                                            <div class="shadow"></div>
+                                            <div class="inn">9</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <img class="yogimage" src="assets/img/yog1.png" height="250px"
+                            width="250px">
+                        </div>
+
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</body>
+<script src="assets/js/model32.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</html>
