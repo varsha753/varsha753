@@ -253,6 +253,7 @@ function nextPose(){
     counter = 0;
     poseCounter = poseCounter + 1;
     targetLabel = posesArray[poseCounter];
+    console.log("classifying will start");
     console.log("next pose target label" + targetLabel);
 
     target = t[poseCounter];
