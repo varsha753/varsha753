@@ -129,7 +129,7 @@ let counter;
 
 function setup() {
 // Grab elements, create settings, etc.
-var video = document.getElementById('video');
+/*var video = document.getElementById('video');
 
 // Get access to the camera!
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -139,7 +139,13 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video.srcObject = stream;
         video.play();
     });
-}
+
+  }*/
+    createCanvas(640, 480);
+
+    video = createCapture(VIDEO);
+    video.hide();
+
 
 poseNet = ml5.poseNet(video, modelLoaded);
 poseNet.on('pose', gotPoses);
@@ -369,12 +375,35 @@ else {
 
 }
 
+
 function draw() {
+  push();
+  translate(video.width, 0);
+  scale(-1, 1);
+  image(video, 0, 0, video.width, video.height);
+
+  if (pose) {
+    for (let i = 0; i < skeleton.length; i++) {
+      let a = skeleton[i][0];
+      let b = skeleton[i][1];
+      strokeWeight(2);
+      stroke(0);
+
+      line(a.position.x, a.position.y, b.position.x, b.position.y);
+    }
+    for (let i = 0; i < pose.keypoints.length; i++) {
+      let x = pose.keypoints[i].position.x;
+      let y = pose.keypoints[i].position.y;
+      fill(0);
+      stroke(255);
+      ellipse(x, y, 16, 16);
+    }
+  }
+  pop();
 
   fill(255, 0, 255);
-    noStroke();
-    textSize(30);
-    textAlign(CENTER, CENTER);
-    text(poseLabel, width / 2, height -50);
-
+  noStroke();
+  textSize(30);
+  textAlign(CENTER, CENTER);
+  text(poseLabel, width / 2, height -50);
 }
