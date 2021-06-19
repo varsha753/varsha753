@@ -258,7 +258,7 @@ function nextPose(){
 
     target = t[poseCounter];
       //target2= posesHindi[poseCounter];
-    document.getElementById("pose_name").textContent = targetLabel;
+    document.getElementById("yogan").textContent = targetLabel;
      document.getElementById("welldone").textContent = "Good job!! Please do the next pose.";
     console.log("classifying again");
     setTimeout(classifyPose, 4000)}
