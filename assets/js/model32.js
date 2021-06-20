@@ -175,14 +175,14 @@ poseNet.on('pose', gotPoses);
       weights: 'model4/model.weights.bin',
     };
 
-    //brain.load(modelInfo, brainLoaded);
+    brain.load(modelInfo, brainLoaded);
 
 }
 
 function brainLoaded() {
   console.log('pose classification ready!');
 
- //classifyPose();
+ classifyPose();
 }
 
 function classifyPose() {
