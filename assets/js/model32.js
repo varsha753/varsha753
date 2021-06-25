@@ -1,4 +1,4 @@
-//let video;
+let video;
 let poseNet;
 let pose;
 let skeleton;
@@ -129,6 +129,8 @@ let counter;
 
 function setup() {
 // Grab elements, create settings, etc.
+
+/*
 var video = document.getElementById('video');
 // Get access to the camera!
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -139,18 +141,25 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video.play();
     });
 
-  }
-
+  }   */
+    //video = createCapture(VIDEO);
+    //video.hide();
 
     /*  createCanvas(640, 480);
       video = createCapture(VIDEO);
       video.hide();
 
 */
-    //createCanvas(640, 480);
 
-    //video = createCapture(VIDEO);
-    //video.hide();
+  if (windowWidth<windowWidth/2  && windowHeight<windowHeight/2){
+    createCanvas(500, 300);
+    video = createCapture(VIDEO);
+    video.hide();
+  }
+  
+    createCanvas(640, 480);
+    video = createCapture(VIDEO);
+    video.hide();
 
 
 poseNet = ml5.poseNet(video, modelLoaded);
@@ -183,6 +192,9 @@ function brainLoaded() {
   console.log('pose classification ready!');
 
  classifyPose();
+}
+function windowResized() {
+resizeCanvas(500, 300);
 }
 
 function classifyPose() {
@@ -387,8 +399,7 @@ function draw() {
   push();
   translate(video.width, 0);
   scale(-1, 1);
-  var context = canvas.getContext('2d');
-  context.drawImage(video,0 , 0, video.width,video.height);
+  image(video,0, 0, video.width,video.height);
 
   if (pose) {
     for (let i = 0; i < skeleton.length; i++) {
