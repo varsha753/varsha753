@@ -1,6 +1,7 @@
 let video;
 let poseNet;
 let pose;
+let canvas;
 let skeleton;
 let flag=0;
 let brain;
@@ -10,8 +11,8 @@ let poseCounter;
 let target2;
 let t=['B','A','C','E','G'];
 let posesArray = ['Prayer Pose', 'Lotus Pose', 'Cow-Face Pose','Warrior I', 'Tree Pose'];
-
-
+let posesHindi = ['(Pranama-asan)', '(Padma-asana)', '(Gomukha-asan)','(Ustra-asan)', '(Virabhadra-asana)', '(Vrikshasana)'];
+let targethindi;
 let counter;
 
 
@@ -152,12 +153,14 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 */
 
   if (windowWidth<windowWidth/2  && windowHeight<windowHeight/2){
-    createCanvas(500, 300);
+    canvas= createCanvas(500, 300);
+    canvas.position(300,80);
     video = createCapture(VIDEO);
     video.hide();
   }
-  
-    createCanvas(640, 480);
+
+    canvas = createCanvas(600, 400);
+    canvas.position(42,50);
     video = createCapture(VIDEO);
     video.hide();
 
@@ -167,9 +170,10 @@ poseNet.on('pose', gotPoses);
   poseCounter=0;
   counter = 0;
   targetLabel = posesArray[poseCounter];
-
+  targethindi = posesHindi[poseCounter];
   target=t[poseCounter];
-  document.getElementById("yogan").textContent = targetLabel;
+ document.getElementById("yogan").textContent = targetLabel;
+ document.getElementById("yogahindi").textContent = targethindi;
   let options = {
     inputs: 34,
     outputs: 8,
@@ -184,7 +188,7 @@ poseNet.on('pose', gotPoses);
       weights: 'model4/model.weights.bin',
     };
 
-    brain.load(modelInfo, brainLoaded);
+  brain.load(modelInfo, brainLoaded);
 
 }
 
@@ -219,8 +223,10 @@ function classifyPose() {
 
 
 function gotResult(error, results) {
+document.getElementById("next").textContent = "";
+document.getElementById("hold").textContent = "";
 document.getElementById("welldone").textContent = "";
-
+document.getElementById("time").textContent = "00:00";
   poseLabel='Hold pose for '+targetLabel;
   //console.log('iteration begin');
   console.log('Hold pose for '+targetLabel);
@@ -236,15 +242,25 @@ document.getElementById("welldone").textContent = "";
     else if (counter==0){
       console.log('iteration begin');
       counter+=1;
+      document.getElementById("time").textContent = "00:"+"0"+counter;
       poseLabel='Hold pose for '+targetLabel;
+      document.getElementById("hold").textContent = "Hold this pose";
+
       classifyPose();
 
     }
     else{
       poseLabel='Hold your pose';
+      counter+=1;
+      document.getElementById("hold").textContent = "Hold this pose";
+      if (counter<9)
+      document.getElementById("time").textContent = "00:"+"0"+counter;
+      else{
+        document.getElementById("time").textContent = "00:"+counter;
+      }
       //console.log(poseLabel);
       //console.log(results[0].confidence);
-      counter+=1;
+
       console.log(counter);
       classifyPose();
     }
@@ -252,6 +268,8 @@ document.getElementById("welldone").textContent = "";
   }
     else{
       poseLabel='Hold pose for '+targetLabel;
+      document.getElementById("hold").textContent = "";
+      document.getElementById("time").textContent = "00:00";
       counter=0;
       classifyPose();
     }
@@ -259,8 +277,10 @@ document.getElementById("welldone").textContent = "";
 }
 
 function nextPose(){
-  if (poseCounter >= 5) {
+  if (poseCounter >= 3) {
     console.log("Well done, you have learnt all poses!");
+    document.getElementById("hold").textContent = "";
+    document.getElementById("next").textContent = "";
     document.getElementById("welldone").textContent = "Well Done!! You have completed all the poses.";
     var audio = new Audio('sound/sound.wav');
     audio.play();
@@ -273,11 +293,14 @@ function nextPose(){
     targetLabel = posesArray[poseCounter];
     console.log("classifying will start");
     console.log("next pose target label" + targetLabel);
+    document.getElementById("hold").textContent = "";
 
     target = t[poseCounter];
       //target2= posesHindi[poseCounter];
     document.getElementById("yogan").textContent = targetLabel;
-     document.getElementById("welldone").textContent = "Good job!! Please do the next pose.";
+    targethindi = posesHindi[poseCounter];
+  document.getElementById("yogahindi").textContent = targethindi;
+     document.getElementById("next").textContent = "Good job!! Please do the next pose.";
     console.log("classifying again");
     setTimeout(classifyPose, 4000)}
 

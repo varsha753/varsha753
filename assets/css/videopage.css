@@ -15,21 +15,21 @@ body{
 
 
 @media only screen and (max-width: 2412px) and (min-width: 599px) {
-  
+
     .context {
         position: relative;
         height: 100%;
         width: 100%;
-          
+
       }
       .context video{
         position: relative;
         top: 0;
         right: 0;
         bottom: 0;
-        left: 0;  
-        width: 95%;
-        height: auto;  
+        left: 0;
+        width: 100%;
+        height: 65%;
         margin: 5px;
         border: #4e54c8 solid 0.5rem;
         border-radius: 1rem;
@@ -38,7 +38,8 @@ body{
         width: auto;
         display: block; */
       }
-      
+
+
       .title{
           color: aliceblue;
           text-align: center;
@@ -46,15 +47,15 @@ body{
           border: blueviolet 0.1rem solid;
           border-radius: 50px;
       }
-      
+
       .yogimage{
         border: #4e54c8 solid 0.5rem;
         height: 500px;
         width: 500px;
-        margin-left: 40px;
+        margin-left: 55px;
       }
-      
-      
+
+
       .title2{
           color: aliceblue;
           text-align: center;
@@ -72,33 +73,43 @@ body{
         color: aliceblue;
         text-align: center;
         margin-top: 60px;
-        margin-left: 180px;
+        margin-left: 20px;
         margin-right: 50px;
         background-color: rgba(42, 54, 165, 0.747);
         border: blueviolet 0.1rem solid;
         border-radius: 50px;
       }
-    
-     
+      .yoganameh{
+        font-size:x-large;
+        color: aliceblue;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 50px;
+
+
+        border-radius: 30px;
+      }
+
 
 }
 
 @media only screen and (max-width: 600px) {
-    
+
     .context {
         position: relative;
         height: 500%;
         width: 100%;
-          
+
       }
 .context video{
   position: relative;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;  
+  left: 0;
   width: 95%;
-  height: auto;  
+  height: auto;
   margin: 5px;
   border: #4e54c8 solid 0.5rem;
   border-radius: 1rem;
@@ -158,10 +169,10 @@ body{
     }
   } */
 
-  
+
   .containers{
-    background: #4e54c8;  
-    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    background: #4e54c8;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     /* width: 1080px;
     height: 480px; */
     position:absolute;
@@ -172,8 +183,8 @@ body{
     width: 100%;
     height: 100%;
     /* height:100vh; */
-    
-   
+
+
 }
 .circles{
     position: absolute;
@@ -193,7 +204,7 @@ body{
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
-    
+
 }
 
 .circles li:nth-child(1){
