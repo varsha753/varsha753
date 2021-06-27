@@ -277,7 +277,7 @@ document.getElementById("time").textContent = "00:00";
 }
 
 function nextPose(){
-  if (poseCounter >= 3) {
+  if (poseCounter >= 2) {
     console.log("Well done, you have learnt all poses!");
     document.getElementById("hold").textContent = "";
     document.getElementById("next").textContent = "";
@@ -443,9 +443,5 @@ function draw() {
   }
   pop();
 
-  fill(255, 0, 255);
-  noStroke();
-  textSize(30);
-  textAlign(CENTER, CENTER);
-  text(poseLabel, width / 2, height -50);
+
 }
